@@ -17,12 +17,13 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, './client/build')))
-//connect db
-connectDB();
 //es6 fix
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
+app.use(express.static(path.join(__dirname, './client/build')))
+//connect db
+connectDB();
+
 //rouutes
 app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/category', categoryRoute)
