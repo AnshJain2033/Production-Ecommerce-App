@@ -8,6 +8,8 @@ import cors from 'cors'
 import categoryRoute from './routes/categoryRoute.js'
 import productRoutes from './routes/productRoutes.js'
 import path from 'path'
+import {fileURLToPath} from 'url';
+
 dotenv.config()
 //rest object
 const app = express()
@@ -18,6 +20,9 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, './client/build')))
 //connect db
 connectDB();
+//es6 fix
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=path.dirname(__filename);
 //rouutes
 app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/category', categoryRoute)
