@@ -1,5 +1,5 @@
 {
-  "proxy":"https://drab-cyan-llama-kilt.cyclic.app",
+  "proxy":"http://localhost:8080",
   "name": "ecommerce-app",
   "version": "1.0.0",
   "description": "",
